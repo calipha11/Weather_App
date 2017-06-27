@@ -29,6 +29,7 @@ app.get("/", function(req, res){
                     var tempC = Math.round(data.main.temp - 273);
                     var tempF = Math.round(((data.main.temp - 273)*(9/5)) + 32);
                     var weather = data.weather[0].main;
+                    console.log(weather);
                     res.render("results", {tempC: tempC, tempF: tempF, weather: weather, city: city, regionName: regionName});
                 } else {
                     console.log(error);
